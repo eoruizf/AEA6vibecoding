@@ -1,0 +1,462 @@
+
+/* ========================================
+   PAWCARE - ESTILS GENERALS
+======================================== */
+
+:root {
+    --paw-green: #287c72;
+    --paw-green-dark: #20645c;
+    --paw-beige: #f2e9d8;
+    --paw-orange: #f5a66b;
+    --paw-pink: #f8e5e4;
+    --paw-text: #514a3e;
+    --paw-muted: #77746d;
+    --paw-white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--paw-text);
+    background: var(--paw-white);
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text-pawcare {
+    color: var(--paw-green);
+}
+
+
+/* ========================================
+   BOTONS
+======================================== */
+
+.btn-pawcare {
+    background-color: var(--paw-green);
+    border: 1px solid var(--paw-green);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.btn-pawcare:hover {
+    background-color: var(--paw-green-dark);
+    border-color: var(--paw-green-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-outline-pawcare {
+    color: var(--paw-green);
+    background: transparent;
+    border: 1px solid var(--paw-green);
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.btn-outline-pawcare:hover {
+    background-color: var(--paw-green);
+    color: white;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.pawcare-navbar {
+    border-bottom: 1px solid #eeeeee;
+    padding: 16px 0;
+}
+
+.pawcare-brand {
+    color: var(--paw-green) !important;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.pawcare-brand i {
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+.pawcare-brand span {
+    color: var(--paw-orange);
+}
+
+.navbar-nav {
+    gap: 12px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--paw-text);
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--paw-green);
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero-section {
+    background-color: var(--paw-beige);
+    padding: 90px 0;
+    overflow: hidden;
+}
+
+.hero-label {
+    display: inline-block;
+    background: white;
+    color: var(--paw-green);
+    padding: 10px 17px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.hero-content h1 {
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.hero-content h1 span {
+    color: var(--paw-green);
+}
+
+.hero-content p {
+    color: var(--paw-muted);
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 520px;
+}
+
+.hero-image {
+    min-height: 390px;
+    background: linear-gradient(145deg, #c5dfcf, #8fbda5);
+    border-radius: 35px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-dog {
+    width: 230px;
+    height: 230px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-dog span {
+    font-size: 115px;
+}
+
+.hero-dog i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--paw-orange);
+    font-size: 35px;
+}
+
+.hero-image-content {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 12px 20px;
+    border-radius: 15px;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--paw-green);
+    z-index: 1;
+}
+
+.hero-image-content i {
+    margin-right: 7px;
+}
+
+
+/* ========================================
+   SECCIONS
+======================================== */
+
+.section-padding {
+    padding: 85px 0;
+}
+
+.section-heading {
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+.section-heading > span {
+    color: var(--paw-green);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: var(--paw-muted);
+    font-size: 16px;
+}
+
+
+/* ========================================
+   TARGETES DE SERVEIS
+======================================== */
+
+.services-section {
+    background: #ffffff;
+}
+
+.service-card {
+    height: 100%;
+    padding: 32px;
+    border: 1px solid #eeeeee;
+    border-radius: 20px;
+    transition: 0.25s ease;
+    background: white;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+}
+
+.service-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+.icon-green {
+    background: #e2f1e8;
+    color: #287c72;
+}
+
+.icon-orange {
+    background: #fff0e3;
+    color: #e58d4c;
+}
+
+.icon-pink {
+    background: #fce9e9;
+    color: #dc7777;
+}
+
+.service-card h4 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 13px;
+}
+
+.service-card p {
+    color: var(--paw-muted);
+    line-height: 1.7;
+    min-height: 80px;
+}
+
+.service-card a {
+    display: inline-block;
+    color: var(--paw-green);
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.service-card a:hover {
+    color: var(--paw-green-dark);
+}
+
+
+/* ========================================
+   CRIDA A L'ACCIO
+======================================== */
+
+.cta-section {
+    background: var(--paw-green);
+    color: white;
+    padding: 75px 20px;
+}
+
+.cta-icon {
+    font-size: 38px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.cta-section h2 {
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 28px;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.pawcare-footer {
+    background: #f7f6f1;
+    color: var(--paw-text);
+}
+
+.footer-brand {
+    display: inline-block;
+}
+
+.pawcare-footer h5 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.footer-description {
+    color: var(--paw-muted);
+    line-height: 1.8;
+    max-width: 380px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--paw-muted);
+    transition: 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--paw-green);
+}
+
+.footer-divider {
+    border-color: #dedbd2;
+    margin: 35px 0 22px;
+}
+
+.pawcare-footer p {
+    font-size: 13px;
+    color: var(--paw-muted);
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 991px) {
+
+    .navbar-collapse {
+        padding-top: 20px;
+    }
+
+    .navbar-nav {
+        gap: 3px;
+    }
+
+    .hero-section {
+        padding: 65px 0;
+    }
+
+    .hero-image {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .hero-section {
+        padding: 50px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-image {
+        min-height: 270px;
+        border-radius: 22px;
+    }
+
+    .hero-dog {
+        width: 175px;
+        height: 175px;
+    }
+
+    .hero-dog span {
+        font-size: 85px;
+    }
+
+    .hero-image-content {
+        font-size: 11px;
+        padding: 10px 12px;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .service-card {
+        padding: 25px;
+    }
+
+    .cta-section h2 {
+        font-size: 27px;
+    }
+}
