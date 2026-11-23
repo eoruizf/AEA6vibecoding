@@ -7,6 +7,13 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DogController;
 
+use App\Http\Controllers\AdoptionDogController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\LikeController;
+
+
 Route::middleware('auth')->group(function () {
     // ... l-routes li kaynin
     Route::resource('dogs', DogController::class);
@@ -31,4 +38,20 @@ Route::middleware('auth')->group(function () {
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
         Route::resource('users', UserController::class)->except('show');
     });
+
+
+    Route::resource('adoption-dogs', AdoptionDogController::class)->except(['index', 'show']);
+    Route::resource('events', EventController::class)->except(['index', 'show']);
+
+    Route::get('/favorites', [FavoriteController::class, 'index'])->name('favorites.index');
+
+    Route::post('/interact/{type}/{id}/like',     [LikeController::class, 'toggle'])->name('likes.toggle');
+    Route::post('/interact/{type}/{id}/favorite', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
+    Route::post('/interact/{type}/{id}/comments', [CommentController::class, 'store'])->name('comments.store');
+    Route::delete('/comments/{comment}',          [CommentController::class, 'destroy'])->name('comments.destroy');
+
 });
+
+
+Route::resource('adoption-dogs', AdoptionDogController::class)->only(['index', 'show']);
+Route::resource('events', EventController::class)->only(['index', 'show']);

@@ -28,11 +28,36 @@
         .row{display:flex;gap:8px;align-items:center}
         .pagination{display:flex;gap:6px;margin-top:16px;list-style:none;padding:0}
         .err{color:#dc2626;font-size:13px}
+
+
+        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:16px}
+        .item{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+        .item .cover{width:100%;height:160px;object-fit:cover;display:flex;align-items:center;justify-content:center;background:#e5e7eb;font-size:42px}
+        .item .body{padding:12px}
+        .item h3{margin:0 0 6px}
+        .muted{color:#6b7280;font-size:13px}
+        .btn-outline{background:#fff;color:#2563eb;border:1px solid #2563eb}
+        .badge-ok{background:#dcfce7;color:#166534}
+        .badge-warn{background:#fef3c7;color:#92400e}
+        .badge-off{background:#e5e7eb;color:#4b5563}
+        .badge-red{background:#fee2e2;color:#991b1b}
+        .interactions{margin-top:10px}
+        .comment{border-top:1px solid #eee;padding:10px 0}
+        .gallery{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+        .gallery img{width:200px;height:200px;object-fit:cover;border-radius:8px}
+        textarea{width:100%;padding:8px;border:1px solid #ccc;border-radius:6px}
+
+
     </style>
 </head>
 <body>
 <nav>
     <strong>My App</strong>
+    <a href="{{ route('adoption-dogs.index') }}">Adopciones</a>
+    <a href="{{ route('events.index') }}">Eventos</a>
+    @auth
+        <a href="{{ route('favorites.index') }}">Favoritos</a>
+    @endauth
     @auth
         <a href="{{ route('dashboard') }}">Inicio</a>
         <a href="{{ route('profile.edit') }}">Perfil</a>
