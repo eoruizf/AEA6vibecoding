@@ -63,4 +63,25 @@ class User extends Authenticatable
     {
         return $this->photo ? Storage::disk('public')->url($this->photo) : null;
     }
+
+    public function adoptionDogs(): HasMany { 
+        return $this->hasMany(AdoptionDog::class); 
+    }
+
+    public function events(): HasMany       { 
+        return $this->hasMany(Event::class); 
+    }
+
+    public function comments(): HasMany     { 
+        return $this->hasMany(Comment::class); 
+    }
+
+    public function likes(): HasMany        { 
+        return $this->hasMany(Like::class); 
+    }
+
+    public function favorites(): HasMany    { 
+        return $this->hasMany(Favorite::class); 
+    }
+    
 }
