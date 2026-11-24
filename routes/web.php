@@ -12,6 +12,8 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\ParkController;
+use App\Http\Controllers\VeterinaryCenterController;
 
 
 Route::middleware('auth')->group(function () {
@@ -37,6 +39,8 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
         Route::resource('users', UserController::class)->except('show');
+        Route::resource('parks', ParkController::class)->except(['index', 'show']);
+        Route::resource('veterinary-centers', VeterinaryCenterController::class)->except(['index', 'show']);
     });
 
 
@@ -55,3 +59,5 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('adoption-dogs', AdoptionDogController::class)->only(['index', 'show']);
 Route::resource('events', EventController::class)->only(['index', 'show']);
+Route::resource('parks', ParkController::class)->only(['index', 'show']);
+Route::resource('veterinary-centers', VeterinaryCenterController::class)->only(['index', 'show']);

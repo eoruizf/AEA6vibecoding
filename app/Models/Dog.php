@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasInteractions;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -9,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Dog extends Model
 {
-    use HasFactory;
+    use HasFactory, HasInteractions;
 
     public const SEX_MALE   = 'male';
     public const SEX_FEMALE = 'female';
@@ -58,5 +59,15 @@ class Dog extends Model
         return $d->y > 0
             ? $d->y . ($d->y === 1 ? ' año' : ' años')
             : $d->m . ($d->m === 1 ? ' mes' : ' meses');
+    }
+
+    public function getDisplayTitleAttribute(): string
+    {
+        return $this->name;
+    }
+
+    public function getShowUrlAttribute(): string
+    {
+        return route('dogs.show', $this);
     }
 }

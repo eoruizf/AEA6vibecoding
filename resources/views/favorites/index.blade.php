@@ -1,7 +1,13 @@
 @extends('layouts.app')
 @section('title', 'Favoritos')
 @section('content')
-@php $labels = ['event' => 'Evento', 'adoption_dog' => 'Adopción']; @endphp
+@php $labels = [
+    'event' => 'Evento',
+    'adoption_dog' => 'Adopción',
+    'dog' => 'Perro',
+    'park' => 'Parque',
+    'veterinary_center' => 'Centro veterinario',
+]; @endphp
 <div class="card">
     <h2>Mis favoritos</h2>
     <table>
