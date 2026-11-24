@@ -253,126 +253,76 @@
 
 <body>
 
-<!-- Navbar PawCare + navegació backend -->
-<nav class="navbar navbar-expand-lg pawcare-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark pawcare-navbar">
     <div class="container">
-
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="{{ route('home') }}">
             <i class="bi bi-heart-fill"></i> PawCare
         </a>
 
-        <button class="navbar-toggler bg-light"
-                type="button"
+        <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#navbarPawCare"
-                aria-controls="navbarPawCare"
+                data-bs-target="#pawcareNavbar"
+                aria-controls="pawcareNavbar"
                 aria-expanded="false"
                 aria-label="Obrir menú">
-
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarPawCare">
-
+        <div class="collapse navbar-collapse" id="pawcareNavbar">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">Inici</a>
+                    <a class="nav-link" href="{{ route('adoption-dogs.index') }}">Adopcions</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('adoption-dogs.index') }}">
-                        Adopcions
-                    </a>
+                    <a class="nav-link" href="{{ route('events.index') }}">Esdeveniments</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('events.index') }}">
-                        Esdeveniments
-                    </a>
+                    <a class="nav-link" href="{{ route('parks.index') }}">Parcs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('veterinary-centers.index') }}">Veterinaris</a>
                 </li>
 
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('favorites.index') }}">
-                            Favorits
-                        </a>
+                        <a class="nav-link" href="{{ route('favorites.index') }}">Favorits</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dogs.index') }}">
-                            Els meus gossos
-                        </a>
+                        <a class="nav-link" href="{{ route('dashboard') }}">Inici</a>
                     </li>
-                @endauth
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/parcs') }}">
-                        Parcs
-                    </a>
-                </li>
-
-            </ul>
-
-            <ul class="navbar-nav align-items-lg-center">
-
-                @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dashboard') }}">
-                            Dashboard
-                        </a>
+                        <a class="nav-link" href="{{ route('dogs.index') }}">Els meus gossos</a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('profile.edit') }}">
-                            Perfil
-                        </a>
-                    </li>
-
                     @if(auth()->user()->isAdmin())
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.users.index') }}">
-                                Administració
-                            </a>
+                            <a class="nav-link" href="{{ route('admin.users.index') }}">Usuaris</a>
                         </li>
                     @endif
-
-                    <li class="nav-item d-flex align-items-center gap-2 px-2">
-                        <x-avatar :user="auth()->user()" :size="32" />
-                        <span class="text-white">
-                            {{ auth()->user()->name }}
-                        </span>
-                    </li>
-
-                    <li class="nav-item">
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <button type="submit" class="btn btn-gray btn-sm">
-                                Tancar sessió
-                            </button>
-                        </form>
-                    </li>
-
-                @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">
-                            Iniciar sessió
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="btn btn-light btn-sm ms-lg-2"
-                           href="{{ route('register') }}">
-                            Registrar-se
-                        </a>
-                    </li>
                 @endauth
-
             </ul>
+
+            <div class="d-flex align-items-center gap-2">
+                @auth
+                    <a class="nav-link text-white" href="{{ route('profile.edit') }}">
+                        <x-avatar :user="auth()->user()" :size="32" />
+                        {{ auth()->user()->name }}
+                    </a>
+
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-outline-light btn-sm">
+                            Tancar sessió
+                        </button>
+                    </form>
+                @else
+                    <a class="nav-link text-white" href="{{ route('login') }}">Iniciar sessió</a>
+                    <a class="btn btn-light btn-sm" href="{{ route('register') }}">Registrar-se</a>
+                @endauth
+            </div>
         </div>
     </div>
 </nav>
+
 
 <!-- Contingut -->
 <main class="{{ request()->routeIs('home') ? 'pawcare-home-main' : 'container pawcare-main' }}">
