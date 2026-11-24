@@ -27,4 +27,4 @@
 | Objectiu     | Afegir de manera correcta la part Backend del meu company amb el que tenia de frontend                                                                                                                         |
 | Prompt       | El company ha acavat la seva part de backend, i tenim això al main ara. Com ho podem fer per ajuntar el que ha fet amb el que hem fet nosaltres i encara queda per fer?                                        |
 | Resultat     | Evidentnment, he hagut de fer més prompts apart d'aquest per acabar-ho de arreglar, però al final vaig poder arribar a un resultat que complia amb l'objectiu bàsic. Després falta acavar-ho de fer i millorar |
-| Commit / PR  | 5b640ea4f50db92c1c0c6aeb635107c279cf39fe                                                                                                                                                                       |
+| Commit / PR  | 8f97fc097c4f25b9330aaab827e7d83c83a97f32                                                                                                                                                                       |

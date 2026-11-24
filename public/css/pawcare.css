@@ -10,7 +10,7 @@
     --paw-orange: #f5a66b;
     --paw-pink: #f8e5e4;
     --paw-text: #514a3e;
-    --paw-muted: #77746d;
+    --paw-muted: #f1f1f1;
     --paw-white: #ffffff;
 }
 
@@ -458,5 +458,157 @@ a {
 
     .cta-section h2 {
         font-size: 27px;
+    }
+}
+
+/* ========================================
+   CORRECCIONS INTEGRACIÓ LAYOUT
+======================================== */
+
+/* Home: sense contenidor exterior */
+.pawcare-home-main {
+    padding: 0;
+    min-height: auto;
+}
+
+/* Hero: mantenir proporcions i alineació */
+.hero-section {
+    width: 100%;
+}
+
+.hero-section .row {
+    align-items: center;
+}
+
+/* Evitar que la il·lustració quedi descompensada */
+.hero-image {
+    width: 100%;
+    min-height: 420px;
+}
+
+/* Evitar desbordaments de text */
+.hero-content {
+    min-width: 0;
+}
+
+.hero-content h1 {
+    max-width: 650px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .hero-image {
+        min-height: 340px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-image {
+        min-height: 270px;
+    }
+}
+
+
+/* ========================================
+   ESDEVENIMENTS
+======================================== */
+
+.events-page {
+    padding: 24px;
+}
+
+.events-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.events-header h2 {
+    margin: 0;
+}
+
+.event-tabs {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.event-tab {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 22px;
+    border-radius: 10px;
+    border: 1px solid #d7dedb;
+    background: #ffffff;
+    color: var(--paw-green);
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.event-tab:hover {
+    background: #eaf4f1;
+    color: var(--paw-green-dark);
+}
+
+.event-tab.active {
+    background: var(--paw-green);
+    border-color: var(--paw-green);
+    color: white;
+}
+
+.event-filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.event-filter-form input {
+    width: auto;
+    flex: 1;
+    min-width: 180px;
+}
+
+.event-filter-form button {
+    width: auto;
+}
+
+.event-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+@media (max-width: 576px) {
+    .events-page {
+        padding: 16px;
+    }
+
+    .event-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .event-tab {
+        padding: 10px;
+    }
+
+    .event-filter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .event-filter-form input,
+    .event-filter-form button {
+        width: 100%;
     }
 }

@@ -34,7 +34,7 @@
                             <i class="bi bi-arrow-right ms-2"></i>
                         </a>
 
-                        <a href="{{ url('/adopcions') }}"
+                        <a href="{{ route('adoption-dogs.index') }}"
                            class="btn btn-outline-pawcare btn-lg">
                             Adoptar un gos
                         </a>
@@ -132,7 +132,7 @@
                             que li doni una nova oportunitat.
                         </p>
 
-                        <a href="{{ url('/adopcions') }}">
+                        <a href="{{ route('adoption-dogs.index') }}">
                             Veure adopcions
                             <i class="bi bi-arrow-right"></i>
                         </a>

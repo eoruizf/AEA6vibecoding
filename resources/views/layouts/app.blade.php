@@ -127,12 +127,6 @@
             background: #fde68a;
         }
 
-        .row {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
         .pagination {
             display: flex;
             gap: 6px;
@@ -381,7 +375,7 @@
 </nav>
 
 <!-- Contingut -->
-<main class="container pawcare-main">
+<main class="{{ request()->routeIs('home') ? 'pawcare-home-main' : 'container pawcare-main' }}">
 
     <!-- Missatges del backend -->
     @if(session('success'))
