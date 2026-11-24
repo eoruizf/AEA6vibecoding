@@ -25,4 +25,11 @@ trait StoresFiles
             }
         }
     }
+
+    protected function storeFile(Request $request, string $field, string $dir): ?string
+    {
+        $file = $request->file($field);
+
+        return $file ? $file->store($dir, 'public') : null;
+    }
 }

@@ -52,9 +52,11 @@
 </head>
 <body>
 <nav>
-    <strong>My App</strong>
+    <strong>PawCare</strong>
     <a href="{{ route('adoption-dogs.index') }}">Adopciones</a>
     <a href="{{ route('events.index') }}">Eventos</a>
+    <a href="{{ route('parks.index') }}">Parques</a>
+    <a href="{{ route('veterinary-centers.index') }}">Veterinarios</a>
     @auth
         <a href="{{ route('favorites.index') }}">Favoritos</a>
     @endauth

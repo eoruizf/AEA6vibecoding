@@ -24,5 +24,8 @@
         <tr><th>Microchip</th><td>{{ $dog->microchip_number ?? '-' }}</td></tr>
         <tr><th>Dueño</th><td>{{ $dog->user->name }} ({{ $dog->user->contact_phone ?? $dog->user->email }})</td></tr>
     </table>
+
+    <x-interactions :model="$dog" />
+    <x-comments :model="$dog" />
 </div>
 @endsection
